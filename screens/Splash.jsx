@@ -10,10 +10,11 @@ import {Image, StatusBar, StyleSheet, Text, View} from 'react-native';
 import assets from '../assets';
 
 const Splash = ({navigation}) => {
-  console.log(assets.images.logo);
+  console.log('logo :', assets.images.logo);
+
   useEffect(() => {
     setTimeout(() => {
-      navigation.replace('Maps');
+      navigation.replace('Login');
     }, 5000);
   });
   return (
@@ -22,7 +23,11 @@ const Splash = ({navigation}) => {
         style={styles.logo}
         source={require('../assets/images/logo.png')}
       />
-      <StatusBar barStyle="dark-content" backgroundColor="#ffffff" />
+      <StatusBar
+        barStyle="dark-content"
+        backgroundColor="transparent"
+        translucent
+      />
       <Text>From JLTech</Text>
     </View>
   );
